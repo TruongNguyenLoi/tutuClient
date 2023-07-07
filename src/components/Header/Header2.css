@@ -1,0 +1,33 @@
+.header2 {
+    padding: 25px 0px 15px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 1px 2px;
+    background: rgb(255, 255, 255);
+    position: relative;
+    z-index: 1;
+}
+
+.header-container {
+    width: 1270px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.header2 .header-container {
+    display: flex;
+    width: 1170px;
+}
+
+.header2 .logo {
+    flex: 1 1 0%;
+}
+
+.header2 .logo .icon {
+    background-image: url(https://frontend.tikicdn.com/_desktop-next/static/img/sprite@2x.png);
+    background-size: 404px;
+    background-position: 0px 0px;
+    width: 90px;
+    height: 60px;
+    display: block;
+}
