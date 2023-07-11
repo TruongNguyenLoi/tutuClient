@@ -265,7 +265,7 @@ function ResultOrderPage(props) {
                                                 <img src="https://salt.tikicdn.com/ts/upload/63/fc/e8/50c078ea9bf9a4627176d3574db7a446.jpg" height={178} width={195} alt="" />
                                             </div>
                                             <div className="order-info__content">
-                                                <h3 className="thanks-msg">Cảm ơn bạn đã mua hàng tại Taka!</h3>
+                                                <h3 className="thanks-msg">Cảm ơn bạn đã mua hàng tại TuTu-Store!</h3>
                                                 <p>Mã số đơn hàng của bạn:</p>
                                                 <div className="order-number">{orderDetail.id}</div>
                                                 <p>Bạn có thể xem lại <Link to="/customer/order/history">đơn hàng của tôi</Link>

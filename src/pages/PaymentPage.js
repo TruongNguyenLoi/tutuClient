@@ -21,19 +21,21 @@ const shipmethods = [
         type: 1,
         name: 'Giao Hàng Nhanh'
     },
+   
 ]
 
 const icon_bank = [
+    "https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689023082/logo/0oxhzjmxbksr1686814746087_xltsyn.png",
     "https://frontend.tikicdn.com/_desktop-next/static/img/icons/checkout/icon-payment-method-cod.svg",
-    "https://salt.tikicdn.com/ts/upload/76/80/08/62e0faf2af2869ba93da5f79a9dc4c4b.png",
-    "https://frontend.tikicdn.com/_desktop-next/static/img/icons/checkout/icon-payment-method-mo-mo.svg",
-    "https://frontend.tikicdn.com/_desktop-next/static/img/icons/checkout/icon-payment-method-zalo-pay.svg",
+    "https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689023385/logo/Logo-ZaloPay-Square_ev8vua.webp",
+    "https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689022989/logo/MoMo_Logo_cjsha7.png",
 ]
 
 function PaymentPage(props) {
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart.cartSelected);
-    const [user, setUser] = useState({})
+    // const [cart, getDetailCartSelected] = useState({});
+    const [user, setUser] = useState({});
     const [type, setType] = useState(1);
     const [openAddress, setOpenAddress] = useState(false);
     const [payMethods, setPayMethods] = useState([])
@@ -54,7 +56,7 @@ function PaymentPage(props) {
         if (!_.isEmpty(user)) {
             if (shipType === 1) {
                 calculateShipFeeGHN({
-                    from_district_id: 3695,
+                    from_district_id: 1542,
                     service_id: 53320,
                     service_type_id: null,
                     to_district_id: user?.district_id,
@@ -69,10 +71,22 @@ function PaymentPage(props) {
                     }))
                     .catch(err => console.log(err))
             } else {
-               
+                // calculateShipFeeGHTK({
+                //     pick_province: 'Hà Nội',
+                //     pick_district: 'Quận Hà Đông',
+                //     province: user?.city,
+                //     district: user?.district,
+                //     weight: cart?.weight,
+                //     deliver_option: 'none',
+                //     value: cart?.total_price
+                // })
+                //     .then((res => {
+                //         setShipInfo(res.data)
+                //     }))
+                //     .catch(err => console.log(err))
             }
         }
-    }, [cart?.height, cart?.length, cart?.total_price, cart?.weight, cart?.width, shipType, user])
+    }, [cart.height, cart.length, cart.total_price, cart.weight, cart.width, shipType, user])
 
     useEffect(() => {
         getUser();
@@ -109,7 +123,7 @@ function PaymentPage(props) {
 
     useEffect(() => {
 
-        document.title = "Thông tin thanh toán"
+        document.title = "Thông tin thanh toán | Tiki"
 
         if (token) {
             dispatch(getDetailCartSelected())
@@ -160,7 +174,7 @@ function PaymentPage(props) {
             orderInfo.amount = calculateTotalOrder(cart?.total_price);
             orderInfo.vnp_OrderInfo = "Thanh toan doan hang";
             orderInfo.vnp_Amount = calculateTotalOrder(cart?.total_price);
-            if (type === 3) {
+            if (type === 4) {
                 let now = new Date();
                 const create_time = now.getDate() + "-" + (now.getMonth() + 1) + "-" + now.getFullYear();
                 const order_details = cart?.cart_details.map(item => {
@@ -173,7 +187,7 @@ function PaymentPage(props) {
                     }
                 })
                 const payment = {
-                    type: 1,
+                    type: 4,
                     method_code: 'momo',
                     datePayment: create_time,
                     tradingCode: null,
@@ -225,7 +239,7 @@ function PaymentPage(props) {
                         draggable: true,
                         progress: undefined,
                     }))
-            } else if (type === 4) {
+            } else if (type === 3) {
                 let now = new Date();
                 const create_time = now.getDate() + "-" + (now.getMonth() + 1) + "-" + now.getFullYear();
                 const order_details = cart?.cart_details.map(item => {
@@ -238,8 +252,8 @@ function PaymentPage(props) {
                     }
                 })
                 const payment = {
-                    type: 1,
-                    method_code: 'zalopay',
+                    type: 3,
+                    method_code: 'ZALOPAY',
                     datePayment: create_time,
                     tradingCode: null,
                     status: 0
@@ -290,7 +304,7 @@ function PaymentPage(props) {
                         draggable: true,
                         progress: undefined,
                     }))
-            } else if (type === 2) {
+            } else if (type === 1) {
                 let now = new Date();
                 const create_time = now.getDate() + "-" + (now.getMonth() + 1) + "-" + now.getFullYear();
                 const order_details = cart?.cart_details.map(item => {
@@ -304,7 +318,7 @@ function PaymentPage(props) {
                 })
                 const payment = {
                     type: 1,
-                    method_code: 'vnpay',
+                    method_code: 'VNPAY',
                     datePayment: create_time,
                     tradingCode: null,
                     status: 0
@@ -350,7 +364,7 @@ function PaymentPage(props) {
                         draggable: true,
                         progress: undefined,
                     }))
-            } else if (type === 1) {
+            } else if (type === 2) {
                 let now = new Date();
                 const create_time = now.getDate() + "-" + (now.getMonth() + 1) + "-" + now.getFullYear();
                 const order_details = cart?.cart_details.map(item => {
@@ -364,10 +378,10 @@ function PaymentPage(props) {
                 })
                 const payment = {
                     bankName: null,
-                    method_code: 'cod',
+                    method_code: 'COD',
                     datePayment: create_time,
                     tradingCode: null,
-                    status: 0
+                    status: 1
                 }
                 const order = {
                     username: user.username,
@@ -612,11 +626,11 @@ function PaymentPage(props) {
                                                                         (user?.city && user?.district && user?.ward && cart?.cart_details && cart?.cart_details.length > 0) ? (
                                                                             <span className="prices__value prices__value--final">
                                                                                 {currency(calculateTotalOrder(cart?.total_price))}
-                                                                                <i>(Đã bao gồm VAT nếu có)</i>
+                                                                                <i>(Đã bao gồm phụ phí nếu có)</i>
                                                                             </span>
                                                                         ) : <span className="prices__value prices__value--final">
                                                                             {currency(0)}
-                                                                            <i>(Đã bao gồm VAT nếu có)</i>
+                                                                            <i>(Đã bao gồm phụ phí nếu có)</i>
                                                                         </span>
                                                                     }
 

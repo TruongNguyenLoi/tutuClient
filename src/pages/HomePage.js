@@ -89,26 +89,26 @@ function HomePage(props) {
                 <div className="grid wide">
                     <div className="row">
                         <div className="col l-12 m-12 c-12">
-                            <div className="content">
+                            <div className="content" style={{ backgroundColor:'#D6E9AA' }}>
                                 <div className="nav">
                                     <div className="slider-bar">
                                         <span className="products">
-                                            <Link to="/danh-muc/SC" className="SC">
+                                            <Link to="/SC" className="SC">
                                                 <div className="product">CHĂM SÓC DA</div>
                                             </Link>
-                                            <Link to="/danh-muc/SC" className="HC">
+                                            <Link to="/HC" className="HC">
                                                 <div className="product">CHĂM SÓC TÓC</div>
                                             </Link>
-                                            <Link to="/danh-muc/SC" className="BC">
+                                            <Link to="/BC" className="BC">
                                                 <div className="product">CHĂM SÓC CƠ THỂ</div>
                                             </Link>
-                                            <Link to="/danh-muc/SC" className="MU">
+                                            <Link to="/MU" className="MU">
                                                 <div className="product">TRANG ĐIỂM</div>
                                             </Link>
-                                            <Link to="/danh-muc/SC" className="PF">
+                                            <Link to="/PF" className="PF">
                                                 <div className="product">NƯỚC HOA</div>
                                             </Link>
-                                            <Link to="/danh-muc/SC" className="BI">
+                                            <Link to="/BI" className="BI">
                                                 <div className="product">DỤNG CỤ LÀM ĐẸP</div>
                                             </Link>
         
@@ -202,7 +202,7 @@ function HomePage(props) {
             <div className="row sm-gutter section__content">
                 <div className="col l-12 m-12 c-12">
                     <div className="home-product">
-                        <div className="row sm-gutter section__item">
+                        <div className="row sm-gutter section__item" style={{ backgroundColor:'#DAF1DE' }}>
                             <div className="col l-12 m-12 c-12">
                                 <div className="home-product-category-item">
                                     <h3 className="home-product-title">
@@ -211,14 +211,14 @@ function HomePage(props) {
                                 </div>
                             </div>
                             {
-                                loading ? <ProductItemSkeleton total={products.length} /> : <ProductTopSale products={topSale} />
+                                loading ? <ProductItemSkeleton total={products.length} /> : <ProductItem products={topSale} />
                             }
                         </div>
                     </div>
                 </div>
                 <div className="col l-12 m-12 c-12">
                     <div className="home-product">
-                        <div className="row sm-gutter section__item">
+                        <div className="row sm-gutter section__item" style={{ backgroundColor:'#DAF1DE' }}>
                             <div className="col l-12 m-12 c-12">
                                 <div className="home-product-category-item">
                                     <h3 className="home-product-title">
@@ -234,7 +234,7 @@ function HomePage(props) {
                 </div>
                 <div className="col l-12 m-12 c-12">
                     <div className="home-product">
-                        <div className="row sm-gutter section__item">
+                        <div className="row sm-gutter section__item" style={{ backgroundColor:'#DAF1DE' }}>
                             <div className="col l-12 m-12 c-12">
                                 <div className="home-product-category-item">
                                     <h3 className="home-product-title">

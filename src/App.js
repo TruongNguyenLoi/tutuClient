@@ -31,6 +31,8 @@ import CustomerPassword from 'pages/CustomerPassword';
 import CustomerReview from 'pages/CustomerReview';
 import OAuth2RedirectHandler from 'components/Oauth2Handler/OAuth2RedirectHandler';
 // import Header2 from 'components/Header/Header2';
+import FptAiScript from './FptAiScript';
+
 const ListProductPage = React.lazy(() => import('./pages/ListProductPage'));
 
 function App() {
@@ -77,6 +79,8 @@ function App() {
               <Route exact path="/:category/:subcategory" render={(props) => <ListProductPage {...props} key={props.location.key} />}></Route>
               <Route exact path="/san-pham/:id/:slug" render={(props) => <DetailProduct {...props} key={props.location.key} />}></Route>
               <PublicRoute path="*" component={NotFoundPage} />
+              <FptAiScript />
+              
             </Switch>
 
           </div>
@@ -110,5 +114,6 @@ function PrivateRoute({ component: Component, ...rest }) {
     />
   )
 }
+
 
 export default App;

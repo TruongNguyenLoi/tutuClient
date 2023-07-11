@@ -2,7 +2,7 @@
 
 .header {
   height: var(--header-height);
-  background-color: rgb(250, 150, 230);
+  background-color: #AEE6CB;
 }
 
 .header__navbar {
@@ -21,6 +21,7 @@
   margin: 0 8px;
   position: relative;
   min-height: 26px;
+  color: #000000;
 }
 
 .header__navbar-user {
@@ -124,7 +125,7 @@
 .nav--link {
   display: inline-block;
   font-size: 1.3rem;
-  color: var(--white-color);
+  color: #000000;
   font-weight: 300;
 }
 
@@ -163,7 +164,7 @@
 }
 
 .nav--icon-link {
-  color: var(--white-color);
+  color: #000000;
 }
 
 .header__navbar-icon {
@@ -175,14 +176,14 @@
 
 .header__navbar--item-title-no-pointer {
   cursor: text;
-  color: var(--white-color);
+  color: #000000;
 }
 
 /* ------  QR Code ------ */
 
 .header__qr {
   background-color: var(--white-color);
-  width: 186px;
+  width: 350px;
   position: absolute;
   left: 0;
   top: 118%;
@@ -223,7 +224,7 @@
 }
 
 .header__qr-download-img {
-  height: 18px;
+  height: 150px;
 }
 
 /* ---------    Notify    ----------- */
@@ -374,8 +375,8 @@
 
 .header__logo {
   width: 240px;
-  margin-bottom: 40px;
-  margin-left: -245px;
+  margin-bottom: 15px;
+
 }
 
 .header__logo-img {
@@ -407,12 +408,14 @@
   min-height: 44px;
   cursor: pointer;
   position: relative;
+  color: #000000;
 }
 
 .header__category--icon {
   width: 32px;
   height: 32px;
   margin-right: 8px;
+  color: #000000;
 }
 
 .header__category--text {
@@ -724,7 +727,7 @@
 }
 
 .header__search-btn {
-  background-color: rgb(255 1 227);
+  background-color: #11B5D2;
   border: none;
   outline: none;
   height: 34px;
@@ -903,10 +906,10 @@
   top: -8px;
   right: -20px;
   border-radius: 10px;
-  border: 1px solid #f53e2d;
+  border: 1px solid #000000;
   font-size: 1.2rem;
   line-height: 1.2;
-  color: var(--primary-color);
+  color: #000000;
   background-color: var(--white-color);
 }
 
@@ -1021,7 +1024,9 @@
 /* --------   BODY  --------- */
 
 .app__container {
-  background-color: #f5f5f5;
+  background-color: #D2E9E1;
+  width: 100% ;
+  height: auto;
   position: relative;
 }
 

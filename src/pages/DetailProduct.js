@@ -8,7 +8,7 @@ import { addViewedProduct, getListProductMostPopular, getListProductViewedByUser
 import { addLikeProduct, deleteProductLiked, getProductLiked } from 'actions/services/ProductServices'
 import { getAllCommentByProductId } from 'actions/services/CommentServices'
 // import { getListRecommendForUser, getSimilarProduct } from 'actions/services/RecommendServices'
-import { getSimilarProduct } from 'actions/services/RecommendServices'
+// import { getSimilarProduct } from 'actions/services/RecommendServices'
 
 import { addProductToCart, getCartInfo } from 'actions/services/CartActions'
 import "react-toastify/dist/ReactToastify.css";
@@ -37,7 +37,7 @@ function DetailProduct(props) {
     const username = localStorage.getItem('username')
     const params = new URLSearchParams(window.location.search)
     // const color = params.get('color') ? params.get('color') : '';
-    const [similarProduct, setSimilarProduct] = useState([]);
+    // const [similarProduct, setSimilarProduct] = useState([]);
     // const [recommendList, setRecommendList] = useState([]);
 
     const getUser = useCallback(() => {
@@ -79,9 +79,9 @@ function DetailProduct(props) {
         getOneItem(id)
             .then((res) => {
                 setProduct(res.data);
-                getSimilarProduct(res.data?.features.split(','), res.data?.category.code)
-                    .then((res) => setSimilarProduct(res.data))
-                    .catch(err => console.log(err));
+                // getSimilarProduct(res.data?.features.split(','), res.data?.category.code)
+                //     .then((res) => setSimilarProduct(res.data))
+                //     .catch(err => console.log(err));
             })
             .catch(err => console.log(err));
         getComment();
@@ -277,25 +277,27 @@ function DetailProduct(props) {
                                                 <p>Chia sẻ:</p>
                                                 <div className="share-social">
                                                     <img
-                                                    src=""
-                                                        // src={`${API_URL}/images/facebook.png`}
+                                                        src="https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689020863/logo/facebook_1_ra3cja.png"
                                                         alt="social-facebook" />
-                                                    <img src={`${API_URL}/images/messenger.png`}
+                                                    <img 
+                                                        src="https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689020864/logo/messenger_ytkn36.png"
                                                         alt="social-messenger" />
                                                     <img
-                                                        // src={`${API_URL}/images/copy.png`}
-                                                        src=""
-                                                        alt="social-copy" />
+                                                        src="https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689020864/logo/instagram_twuauj.png"
+                                                        alt="social-instagram" />
+                                                    <img
+                                                        src="https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689021023/logo/tiktok_ib5gsx.png"
+                                                        alt="social-tiktok" />   
                                                 </div>
                                                 <div className="like">
                                                     {
                                                         productLiked
                                                             ?
-                                                            <img src=" "onClick={toggleLikeProduct} alt="social-liked" />
+                                                            <img src="https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689020863/logo/hearted_trb668.png"onClick={toggleLikeProduct} alt="social-liked" />
                                                             :
-                                                            <img src="" onClick={toggleLikeProduct} alt="social-like" />
+                                                            <img src="https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689020863/logo/heart_e82eco.png" onClick={toggleLikeProduct} alt="social-like" />
                                                     }
-                                                    <p>{productLiked ? 'Đã thích' : 'Thích'}</p>
+                                                    <p >{productLiked ? 'Đã thích' : 'Thích'}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -352,7 +354,7 @@ function DetailProduct(props) {
                                                         className={quantity <= 1 ? 'disable' : ''}
                                                         disabled={quantity <= 1}
                                                         onClick={() => setQuantity(quantity - 1)}>
-                                                        <img src={`${API_URL}/images/remove.png`} alt="remove-icon" width={20} height={20} />
+                                                        <img src={`https://res.cloudinary.com/dk4pzxlqt/image/upload/v1688980445/logo/previous_hck8ki.png`} alt="remove-icon" width={20} height={20} />
                                                     </button>
                                                     <input
                                                         type="number"
@@ -367,7 +369,7 @@ function DetailProduct(props) {
                                                             setQuantity(quantity + 1)}
                                                         className={quantity >= product.in_stock ? 'disable' : ''}
                                                         disabled={quantity >= product.in_stock}>
-                                                        <img src={`${API_URL}/images/add.png`} alt="add-icon" width={20} height={20} />
+                                                        <img src={`https://res.cloudinary.com/dk4pzxlqt/image/upload/v1688991641/logo/next_ytvug3.png`} alt="add-icon" width={20} height={20} />
                                                     </button>
                                                 </div>
                                                 <div className="input-label">
@@ -389,7 +391,7 @@ function DetailProduct(props) {
                                     </div>
                                 </div>
                             </div>
-                            <div className="row sm-gutter section__item">
+                            {/* <div className="row sm-gutter section__item">
                                 <div className="col l-12 m-12 c-12">
                                     <div className="home-product-category-item">
                                         <h3 className="home-product-title">
@@ -400,7 +402,7 @@ function DetailProduct(props) {
                                 {
                                     loading ? <ProductItemSkeleton total={similarProduct.length} /> : <ProductItem products={similarProduct} />
                                 }
-                            </div>
+                            </div> */}
                             <div className="row sm-gutter section__item">
                                 <div className="col l-12 m-12 c-12">
                                     <div className="home-product-category-item">

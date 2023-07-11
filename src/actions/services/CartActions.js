@@ -108,15 +108,26 @@ export const getDetailCartSelected = (data) => {
         axiosClient({
             method: 'GET',
             url: `${API_URL}/api/carts/mine/items/selected`,
+            data: data 
             // headers: headers,
         })
+            // .then((res) => {
+            //     console.log(res.data);
+            //     getCartInfo();
+            //     dispatch({
+            //         type: GET_ALL_ITEM_IN_CART_SELECTED,
+            //         payload: res
+            //     })
+            // })
+            // .catch(err => console.log(err))
             .then((res) => {
-                console.log(res.data);
+               
                 getCartInfo();
                 dispatch({
                     type: GET_ALL_ITEM_IN_CART_SELECTED,
                     payload: res
                 })
+                console.log(res.data);
             })
             .catch(err => console.log(err))
     }

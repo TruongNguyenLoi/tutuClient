@@ -5,6 +5,7 @@ import axiosClient from 'actions/constants/axiosClient';
 const token = localStorage.getItem('token');
 const headers = { Authorization: `Bearer ${token}` }
 
+
 // Danh sách các bình luận sản phẩm
 export const getAllCommentByProductId = (productId) => {
     return axios({

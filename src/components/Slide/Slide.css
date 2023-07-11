@@ -129,7 +129,7 @@
 .features-slide-img {
     height: 450px;
     width: 100%;
-    object-fit: contain
+    object-fit: cover
 }
 
 .slick-prev {

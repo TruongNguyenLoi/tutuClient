@@ -56,11 +56,11 @@ function DetailProductSkeleton(props) {
                           .fill()
                           .map((item, index) => {
                             return (
-                              <tr key={index}>
-                                <td>
+                              <tr key={index} >
+                                <td style={{backgroundColor: '#D6E9AA' }}>
                                   <Skeleton duration={1} />
                                 </td>
-                                <td>
+                                <td style={{backgroundColor: '#D6E9AA' }}>
                                   <Skeleton duration={1} />
                                 </td>
                               </tr>

@@ -7,148 +7,108 @@ import "./style.css";
 
 const list_price = [
   {
-    category: "may-anh",
-    prices: [
-      {
-        label: "Dưới 800.000",
-        value: "0,800000",
-      },
-      {
-        label: "Từ 800.000 - 4.000.000",
-        value: "800000,4000000",
-      },
-      {
-        label: "Trên 4.000.000",
-        value: "4000000,10000000000",
-      },
-    ],
-  },
-  {
-    category: "tivi",
-    prices: [
-      {
-        label: "Dưới 10.000.000",
-        value: "0,10000000",
-      },
-      {
-        label: "Từ 10.000.000 - 15.000.000",
-        value: "10000000,15000000",
-      },
-      {
-        label: "Từ 15.000.000 - 25.000.000",
-        value: "15000000,25000000",
-      },
-      {
-        label: "Trên 25.000.000",
-        value: "25000000,10000000000",
-      },
-    ],
-  },
-  {
-    category: "may-giat",
-    prices: [
-      {
-        label: "Dưới 6.000.000",
-        value: "0,6000000",
-      },
-      {
-        label: "Từ 6.000.000 - 10.000.000",
-        value: "6000000,10000000",
-      },
-      {
-        label: "Từ 10.000.000 - 16.000.000",
-        value: "10000000,16000000",
-      },
-      {
-        label: "Trên 16.000.000",
-        value: "14000000,10000000000",
-      },
-    ],
-  },
-  {
-    category: "laptop",
-    prices: [
-      {
-        label: "Dưới 5.000.000",
-        value: "0,5000000",
-      },
-      {
-        label: "Từ 5.000.000 - 10.000.000",
-        value: "5000000,10000000",
-      },
-      {
-        label: "Từ 10.000.000 - 20.000.000",
-        value: "10000000,20000000",
-      },
-      {
-        label: "Trên 20.000.000",
-        value: "20000000,10000000000",
-      },
-    ],
-  },
-  {
-    category: "dien-thoai",
+    category: "SC",
     prices: [
       {
         label: "Dưới 500.000",
         value: "0,500000",
       },
       {
-        label: "Từ 500.000 - 5.000.000",
-        value: "500000,5000000",
+        label: "Từ 500.000 - 2000.000",
+        value: "500000,2000000",
       },
       {
-        label: "Từ 5.000.000 - 20.000.000",
-        value: "5000000,20000000",
-      },
-      {
-        label: "Trên 20.000.000",
-        value: "20000000,10000000000",
+        label: "Trên 2.000.000",
+        value: "2000000,10000000000",
       },
     ],
   },
   {
-    category: "may-tinh-bang",
+    category: "HC",
     prices: [
       {
-        label: "Dưới 1.000.000",
-        value: "0,1000000",
+        label: "Dưới 500.000",
+        value: "0,500000",
       },
       {
-        label: "Từ 1.000.000 - 5.000.000",
-        value: "1000000,5000000",
+        label: "Từ 500.000 - 2000.000",
+        value: "500000,2000000",
       },
       {
-        label: "Từ 5.000.000 - 20.000.000",
-        value: "5000000,20000000",
-      },
-      {
-        label: "Trên 20.000.000",
-        value: "20000000,10000000000",
+        label: "Trên 2.000.000",
+        value: "2000000,10000000000",
       },
     ],
   },
   {
-    category: "thiet-bi-phu-kien",
+    category: "BC",
     prices: [
       {
-        label: "Dưới 80.000",
-        value: "0,80000",
+        label: "Dưới 500.000",
+        value: "0,500000",
       },
       {
-        label: "Từ 80.000 - 200.000",
-        value: "80000,200000",
+        label: "Từ 500.000 - 2000.000",
+        value: "500000,2000000",
       },
       {
-        label: "Từ 200.000 - 320.000",
-        value: "200000,3200000",
-      },
-      {
-        label: "Trên 320.000",
-        value: "320000,10000000000",
+        label: "Trên 2.000.000",
+        value: "2000000,10000000000",
       },
     ],
   },
+  {
+    category: "MU",
+    prices: [
+      {
+        label: "Dưới 500.000",
+        value: "0,500000",
+      },
+      {
+        label: "Từ 500.000 - 2000.000",
+        value: "500000,2000000",
+      },
+      {
+        label: "Trên 2.000.000",
+        value: "2000000,10000000000",
+      },
+    ],
+  },
+  {
+    category: "PF",
+    prices: [
+      {
+        label: "Dưới 500.000",
+        value: "0,500000",
+      },
+      {
+        label: "Từ 500.000 - 2000.000",
+        value: "500000,2000000",
+      },
+      {
+        label: "Trên 2.000.000",
+        value: "2000000,10000000000",
+      },
+    ],
+  },
+  {
+    category: "BI",
+    prices: [
+      {
+        label: "Dưới 500.000",
+        value: "0,500000",
+      },
+      {
+        label: "Từ 500.000 - 2000.000",
+        value: "500000,2000000",
+      },
+      {
+        label: "Trên 2.000.000",
+        value: "2000000,10000000000",
+      },
+    ],
+  },
+  
 ];
 
 const list_sort = [
@@ -305,7 +265,7 @@ export default function Filter(props) {
         <div className="filter__bar">
           <h3 className="category__heading">Thương Hiệu</h3>
           <ul className="category-list">
-            {brands.map((item, index) => {
+            {brands?.map((item, index) => {
               return (
                 <li className="category-item category-item__filter" key={index}>
                   <div className="item" onClick={() => addQuery("brand", item.code)}>

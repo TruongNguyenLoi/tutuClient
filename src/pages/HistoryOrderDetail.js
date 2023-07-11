@@ -124,7 +124,7 @@ function HistoryOrderDetail(props) {
     }
 
     useEffect(() => {
-        document.title = "Đơn hàng của tôi | Tiki"
+        document.title = "Đơn hàng của tôi"
         getUser();
         getData();
         if (orderInfo?.ship_type === 1) {
@@ -187,7 +187,7 @@ function HistoryOrderDetail(props) {
                                                                 <div className="title">Hình thức giao hàng</div>
                                                                 <div className="content">
                                                                     <p>
-                                                                        <img src="https://salt.tikicdn.com/ts/upload/2a/47/46/0e038f5927f3af308b4500e5b243bcf6.png" width="56" alt="TikiFast" />
+                                                                        <img src="https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689024484/logo/Giao_Hang_Nhanh_Toan_Quoc.b7d18fe5_qmu9yu.png" width="56" alt="TikiFast" />
                                                                     </p>
                                                                     {/* <p>Giao hàng tiêu chuẩn</p> */}
                                                                     {

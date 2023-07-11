@@ -45,7 +45,7 @@ export default function RegisterPage(props) {
                                 <div className="content-left">
                                     <h2>Tạo tài khoản</h2>
                                     <p>Tạo tài khoản để theo dõi đơn hàng, lưu<br /> danh sách sản phẩm yêu thích, nhận <br />nhiều ưu đãi hấp dẫn.</p>
-                                    <img src="https://pipe.tikicdn.com/media/upload/2018/10/12/2a3acb91a35d45e1b4b7c96912a0c84a.png" alt="" />
+                                    <img src="https://res.cloudinary.com/dk4pzxlqt/image/upload/v1688645837/Tutu1-removebg-preview_qqvmjl.png" alt="" />
                                 </div>
                             </div>
                             <div className="col l-6 m-8 c-8">

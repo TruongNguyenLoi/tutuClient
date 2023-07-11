@@ -27,7 +27,7 @@ function CustomerProfile(props) {
     }
 
     useEffect(() => {
-        document.title = "Tài khoản của tôi | Tiki"
+        document.title = "Tài khoản của tôi "
         getUser();
     }, [])
 
@@ -157,7 +157,7 @@ function CustomerProfile(props) {
                                                         value={user?.username}
                                                         disabled
                                                         inputProps={{
-                                                            style: { color: 'blue' },
+                                                            style: { color: 'black' },
                                                         }}
                                                         onChange={handleInputChange}
                                                         label={

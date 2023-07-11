@@ -52,22 +52,18 @@ function Header(props) {
               <li className="header__navbar--item header__navbar--item-qr header__navbar-item--separate">
                 Vào cửa hàng trên ứng dụng
                 <div className="header__qr">
-                  <img
-                    src={`${API_URL}/images/qrcode.png`}
-                    alt="Qr code"
-                    className="header__qr-img"
-                  />
+                  
                   <div className="header__qr-apps">
                     <Link to="/" className="header__qr-link">
                       <img
-                        src={`${API_URL}/images/googleplay.png`}
+                        src={`https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689023581/logo/R_zkvdd7.png`}
                         alt="Goole Play"
                         className="header__qr-download-img"
                       />
                     </Link>
                     <Link to="/" className="header__qr-link">
                       <img
-                        src={`${API_URL}/images/appstore.png`}
+                        src={`https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689023580/logo/R_1_ythyhd.png`}
                         alt="App store"
                         className="header__qr-download-img"
                       />
@@ -79,12 +75,12 @@ function Header(props) {
                 <span className="header__navbar--item-title-no-pointer">
                   Kết nối
                 </span>
-                <Link to="/" className="nav--icon-link">
-                  <i className="header__navbar-icon fab fa-facebook" />
-                </Link>
-                <Link to="/" className="nav--icon-link">
-                  <i className="header__navbar-icon fab fa-instagram" />
-                </Link>
+                <a href="https://www.facebook.com/baotung317" className="nav--icon-link">
+                  <i className="header__navbar-icon fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/_ttruc.pn" className="nav--icon-link">
+                  <i className="header__navbar-icon fab fa-instagram"></i>
+                </a>
               </li>
             </ul>
             <ul className="header__navbar--list">
@@ -156,7 +152,7 @@ function Header(props) {
               <div className="header__category--inner">
                 <div className="header__category--icon">
                   <img
-                    src="https://salt.tikicdn.com/ts/upload/96/d1/77/e499ea39b0773a337d2217ad473fcb97.png"
+                    src="https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689015946/menu_dst51y.png"
                     alt=""
                   />
                 </div>

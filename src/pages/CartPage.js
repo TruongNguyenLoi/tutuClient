@@ -134,24 +134,27 @@ function CartPage(props) {
                 <div className="col l-12 m-12 c-12">
                     <div className="home-product">
                         <div className="bkMhdM">
-                            <h4 className="productsV2__title">Giỏ hàng</h4>
+                            <h4 className="productsV2__title">Giỏ hàng<br></br>
+                                <label className="kKoWwZ">
+                                    <span className="label" style={{fontSize: '15px', fontWeight:'500', color:'red' }}>{cart?.items_count} sản phẩm</span>
+                                </label>
+                            </h4>
+                            
                             {
                                 loading ? <Loading /> : (
                                     <>
+                                    
                                         {
+                                            
                                             cart?.cart_details && cart?.cart_details.length > 0 ? (
                                                 <div className="row sm-gutter">
                                                     <div className="col l-9 m-12 c-12">
                                                         <div className="productsV2-heading">
-                                                            <div className="row">
-                                                                <div className="col-1">
-                                                                    <label className="kKoWwZ">
-                                                                        <span className="label">{cart?.items_count} sản phẩm</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div className="col-2">Đơn giá</div>
-                                                                <div className="col-3">Số lượng</div>
-                                                                <div className="col-4">Thành tiền</div>
+                                                            <div className="row" style={{fontSize: '15px', fontWeight:'500' }}>
+                                                                <div className="col-1" style={{paddingLeft: '52px'}}>Sản Phẩm</div>
+                                                                <div className="col-2">Đơn Giá</div>
+                                                                <div className="col-3">Số Lượng</div>
+                                                                <div className="col-4">Thành Tiền</div>
                                                                 <div className="col-5">
 
                                                                 </div>
@@ -195,7 +198,7 @@ function CartPage(props) {
                                                                                                     <div className="intended-qty">
                                                                                                         <div className="bcFTqg">
                                                                                                             <span className="qty-decrease" onClick={() => handleUpdateItem(item, item.quantity - 1)}>
-                                                                                                                <img src={`${API_URL}/images/decrease.png`} alt="decrease" />
+                                                                                                                <img src={`https://res.cloudinary.com/dk4pzxlqt/image/upload/v1688980445/logo/previous_hck8ki.png`} alt="decrease" />
                                                                                                             </span>
                                                                                                             <input
                                                                                                                 type="tel"
@@ -204,7 +207,7 @@ function CartPage(props) {
                                                                                                                 value={item.quantity}
                                                                                                             />
                                                                                                             <span className="qty-increase" onClick={() => handleUpdateItem(item, item.quantity + 1)}>
-                                                                                                                <img src={`${API_URL}/images/increase.png`} alt="increase" />
+                                                                                                                <img src={`https://res.cloudinary.com/dk4pzxlqt/image/upload/v1688991641/logo/next_ytvug3.png`} alt="increase" />
                                                                                                             </span>
                                                                                                         </div>
                                                                                                     </div>
@@ -214,7 +217,7 @@ function CartPage(props) {
                                                                                                 </div>
                                                                                                 <div className="col-5">
                                                                                                     <span className="intended__delete" onClick={() => handleDeleteItem(item.product_id)}>
-                                                                                                        <img src={`${API_URL}/images/trash.png`} alt="deleted" />
+                                                                                                        <img src={`https://res.cloudinary.com/dk4pzxlqt/image/upload/v1688980445/logo/delete_asrv5y.png`} alt="deleted" />
                                                                                                     </span>
                                                                                                 </div>
                                                                                             </div>
@@ -247,7 +250,7 @@ function CartPage(props) {
                                                                             <p className="prices__total">
                                                                                 <span className="prices__text">Tổng cộng</span>
                                                                                 <span className="prices__value prices__value--final">{currency(cart?.total_price)}
-                                                                                    <i>(Đã bao gồm VAT nếu có)</i>
+                                                                                    <i>(Đã bao gồm phụ phí nếu có)</i>
                                                                                 </span>
                                                                             </p>
                                                                         </div>

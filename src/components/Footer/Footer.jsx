@@ -98,7 +98,7 @@ export default function Footer() {
                 <Link to="/" className="footer__download-link">
                   <img
                     className="footer__download-img"
-                    src={`${API_URL}/images/qrcode.png`}
+                    src={`https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689023581/logo/R_zkvdd7.png`}
                     alt=""
                   />
                 </Link>
@@ -106,14 +106,14 @@ export default function Footer() {
                   <Link to="/" className="footer__download-apps-link">
                     <img
                       className="footer__download-apps-img"
-                      src={`${API_URL}/images/googleplay.png`}
+                      src={``}
                       alt=""
                     />
                   </Link>
                   <Link to="/" className="footer__download-apps-link">
                     <img
                       className="footer__download-apps-img"
-                      src={`${API_URL}/images/appstore.png`}
+                      src={``}
                       alt=""
                     />
                   </Link>

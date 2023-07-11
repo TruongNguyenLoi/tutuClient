@@ -30,47 +30,31 @@ export default function BrandProduct(props) {
         <div className="benefit-item">
           <img
             alt="compensation-icon"
-            src={`${API_URL}/images/compensation.png`}
+            src={`https://res.cloudinary.com/dk4pzxlqt/image/upload/v1688980208/logo/return-product_24px_hwc92k.png`}
             height={20}
             width="auto"
           />
           <span>
             Hoàn tiền
             <br />
-            <b>111%</b>
+            <b>200%</b>
             <br />
-            nếu hàng giả
+           
           </span>
         </div>
-        <div className="benefit-item">
-          <img
-            alt="guarantee-icon"
-            src={`${API_URL}/images/guarantee.png`}
-            height={20}
-            width="auto"
-          />
-          <span>
-            {" "}
-            Mở hộp
-            <br />
-            kiểm tra
-            <br />
-            nhận hàng{" "}
-          </span>
-        </div>
+       
         <div className="benefit-item">
           <img
             alt="refund-icon"
-            src={`${API_URL}/images/refund.png`}
+            src={`https://res.cloudinary.com/dk4pzxlqt/image/upload/v1688980208/logo/guarantee_24px_v2u0wg.png`}
             height={20}
             width="auto"
           />
           <span>
             Đổi trả trong
+            <br />  
+            <b>7 ngày</b>
             <br />
-            <b>30 ngày</b>
-            <br />
-            nếu sp lỗi
           </span>
         </div>
       </div>

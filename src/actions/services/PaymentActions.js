@@ -3,8 +3,16 @@ import { API_URL } from '../constants/constants'
 
 // http://localhost:8085/api/vnpay/make?vnp_Amount=1000000&vnp_Locale=vn&vnp_OrderInfo=Thanh+toan+don+hang&vnp_OrderType=topup&vnp_ReturnUrl=https%3a%2f%2fsandbox.vnpayment.vn%2ftryitnow%2fHome%2fVnPayReturn
 export const makePaymentVnpay = (order) => {
-    return axios.post(
-        `${API_URL}/api/vnpay/make?vnp_Amount=${order.vnp_Amount}&vnp_Locale=vn&vnp_OrderInfo=${order.vnp_OrderInfo}&vnp_OrderType=250000&vnp_ReturnUrl=https%3a%2f%2fsandbox.vnpayment.vn%2ftryitnow%2fHome%2fVnPayReturn`
+    return axios({
+        method: 'POST', 
+        // params: { vnp_Amount: order.vnp_Amount },
+       
+        // data: order
+    }
+      
+        //&vnp_IpAddr=127.0.0.1&vnp_Locale=vn&vnp_OrderInfo=Thanh+toan+don+hang+%3A5&vnp_OrderType=other&vnp_ReturnUrl=https%3A%2F%2Fdomainmerchant.vn%2FReturnUrl&vnp_TmnCode=DEMOV210&vnp_TxnRef=5&vnp_Version=2.1.0&vnp_SecureHash=3e0d61a0c0534b2e36680b3f7277743e8784cc4e1d68fa7d276e79c23be7d6318d338b477910a27992f5057bb1582bd44bd82ae8009ffaf6d141219218625c42'
+        // `${API_URL}/api/vnpay/make?vnp_Amount=${order.vnp_Amount}&vnp_Locale=vn&vnp_OrderInfo=${order.vnp_OrderInfo}&vnp_OrderType=250000&vnp_ReturnUrl=https%3a%2f%2fsandbox.vnpayment.vn%2ftryitnow%2fHome%2fVnPayReturn`
+        
     )
 }
 
