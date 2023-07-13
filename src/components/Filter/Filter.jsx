@@ -82,7 +82,7 @@ const list_price = [
         value: "0,500000",
       },
       {
-        label: "Từ 500.000 - 2000.000",
+        label: "Từ 500.000-2000.000",
         value: "500000,2000000",
       },
       {
@@ -108,31 +108,30 @@ const list_price = [
       },
     ],
   },
-  
 ];
 
 const list_sort = [
   {
-    label: 'Giá thấp đến cao',
-    sortBy: 'price',
-    sortValue: 'asc'
+    label: "Giá thấp đến cao",
+    sortBy: "price",
+    sortValue: "asc",
   },
   {
-    label: 'Giá cao đến thấp',
-    sortBy: 'price',
-    sortValue: 'desc'
+    label: "Giá cao đến thấp",
+    sortBy: "price",
+    sortValue: "desc",
   },
   {
-    label: 'Tên A-Z',
-    sortBy: 'name',
-    sortValue: 'asc'
+    label: "Tên A-Z",
+    sortBy: "name",
+    sortValue: "asc",
   },
   {
-    label: 'Tên Z-A',
-    sortBy: 'name',
-    sortValue: 'desc'
+    label: "Tên Z-A",
+    sortBy: "name",
+    sortValue: "desc",
   },
-]
+];
 
 export default function Filter(props) {
   const { category } = props;
@@ -141,16 +140,25 @@ export default function Filter(props) {
   const [subcategories, setSubcategories] = useState([]);
   const [brands, setBrands] = useState([]);
   const [filterPrice, setFilterPrice] = useState({
-    begin_price: '',
-    end_price: ''
-  })
+    begin_price: "",
+    end_price: "",
+  });
+  // const [category, setCategory] = useState([]);
 
   const params = new URLSearchParams(window.location.search);
   const sortBy = params.get("sort_by") ? params.get("sort_by") : "";
   const sortValue = params.get("sort_value") ? params.get("sort_value") : "";
   const price_search = params.get("price") ? params.get("price") : "";
   const brand = params.get("brand") ? params.get("brand") : "";
-
+  // useEffect(() => {
+  //   getAllCategory()
+  //     .then((res) => {
+  //       setCategory(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
   useEffect(() => {
     getSubCategoryByCategoryCode(category)
       .then((res) => setSubcategories(res.data))
@@ -170,42 +178,33 @@ export default function Filter(props) {
     });
   };
 
-  // const removeQuery = (key) => {
-  //   let pathname = window.location.pathname;
-  //   let searchParams = new URLSearchParams(window.location.search);
-  //   searchParams.delete(key);
-  //   history.push({
-  //     pathname: pathname,
-  //     search: searchParams.toString(),
-  //   });
-  // };
-
   const handleChange = (e) => {
     setFilterPrice({
       ...filterPrice,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmitPrice = () => {
-    const {begin_price, end_price} = filterPrice;
-    if(begin_price === '') {
-      addQuery('price', `0,${end_price}`)
-    } else if(end_price === '') {
-      addQuery('price', `0,${begin_price}`)
-    } else if(parseInt(begin_price) > parseInt(end_price)) {
-      addQuery('price', `${end_price},${begin_price}`)
+    const { begin_price, end_price } = filterPrice;
+    if (begin_price === "") {
+      addQuery("price", `0,${end_price}`);
+    } else if (end_price === "") {
+      addQuery("price", `0,${begin_price}`);
+    } else if (parseInt(begin_price) > parseInt(end_price)) {
+      addQuery("price", `${end_price},${begin_price}`);
     } else {
-      addQuery('price', `${begin_price},${end_price}`)
+      addQuery("price", `${begin_price},${end_price}`);
     }
-  }
+  };
 
   return (
     <>
-      <div className="col l-2-4 m-0 c-0" style={{ paddingBottom: "50px" }}>
+      <div className="col l-3 m-3 c-3" style={{ paddingBottom: "50px" }}>
         <nav className="filter__bar">
           <h3 className="category__heading">Danh mục sản phẩm</h3>
           <ul className="category-list">
+            <ul className="category-list"></ul>
             {subcategories?.map((item) => {
               return (
                 <li className="category-item" key={item.id}>
@@ -226,11 +225,22 @@ export default function Filter(props) {
             {list_sort.map((item, index) => {
               return (
                 <li className="category-item category-item__filter" key={index}>
-                  <div className="item" onClick={() => {
-                    addQuery("sort_by", item.sortBy)
-                    addQuery("sort_value", item.sortValue)
-                  }}>
-                    <span className={sortBy === item.sortBy && sortValue === item.sortValue ? 'selected' : ''}>{item.label}</span>
+                  <div
+                    className="item"
+                    onClick={() => {
+                      addQuery("sort_by", item.sortBy);
+                      addQuery("sort_value", item.sortValue);
+                    }}
+                  >
+                    <span
+                      className={
+                        sortBy === item.sortBy && sortValue === item.sortValue
+                          ? "selected"
+                          : ""
+                      }
+                    >
+                      {item.label}
+                    </span>
                   </div>
                 </li>
               );
@@ -244,9 +254,21 @@ export default function Filter(props) {
               .filter((item) => item.category === category)[0]
               .prices.map((price, index) => {
                 return (
-                  <li className="category-item category-item__filter" key={index}>
-                    <div className="item" onClick={() => addQuery("price", price.value)}>
-                      <span className={price_search === price.value ? 'selected' : ''}>{price.label}</span>
+                  <li
+                    className="category-item category-item__filter"
+                    key={index}
+                  >
+                    <div
+                      className="item"
+                      onClick={() => addQuery("price", price.value)}
+                    >
+                      <span
+                        className={
+                          price_search === price.value ? "selected" : ""
+                        }
+                      >
+                        {price.label}
+                      </span>
                     </div>
                   </li>
                 );
@@ -254,10 +276,22 @@ export default function Filter(props) {
             <li className="category-item category-item__filter category-item__filter-form">
               <div className="price-small-text">Chọn khoảng giá</div>
               <div className="input-group">
-                <input pattern="[0-9]*" placeholder="Giá từ" value={filterPrice.begin_price} name="begin_price" onChange={handleChange} />
+                <input
+                  pattern="[0-9]*"
+                  placeholder="Giá từ"
+                  value={filterPrice.begin_price}
+                  name="begin_price"
+                  onChange={handleChange}
+                />
                 <span>-</span>
-                <input pattern="[0-9]*" placeholder="Giá đến" value={filterPrice.end_price} name="end_price" onChange={handleChange} />
-              </div >
+                <input
+                  pattern="[0-9]*"
+                  placeholder="Giá đến"
+                  value={filterPrice.end_price}
+                  name="end_price"
+                  onChange={handleChange}
+                />
+              </div>
               <button onClick={handleSubmitPrice}>Áp dụng</button>
             </li>
           </ul>
@@ -268,8 +302,13 @@ export default function Filter(props) {
             {brands?.map((item, index) => {
               return (
                 <li className="category-item category-item__filter" key={index}>
-                  <div className="item" onClick={() => addQuery("brand", item.code)}>
-                    <span className={brand === item.code ? 'selected' : ''}>{item.name}</span>
+                  <div
+                    className="item"
+                    onClick={() => addQuery("brand", item.code)}
+                  >
+                    <span className={brand === item.code ? "selected" : ""}>
+                      {item.name}
+                    </span>
                   </div>
                 </li>
               );

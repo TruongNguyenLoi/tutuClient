@@ -2,12 +2,20 @@
 
 .header {
   height: var(--header-height);
-  background-color: #AEE6CB;
+  background-color: #C3E5AE;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
 
 .header__navbar {
   display: flex;
   justify-content: space-between;
+  background-color: #97DBAE;
+
   /* line-height: 3rem; */
 }
 
@@ -1024,7 +1032,7 @@
 /* --------   BODY  --------- */
 
 .app__container {
-  background-color: #D2E9E1;
+  background-color: #f1f1f1;
   width: 100% ;
   height: auto;
   position: relative;

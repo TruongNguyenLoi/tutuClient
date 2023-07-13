@@ -126,7 +126,7 @@ button:focus, button:hover {
 }
 
 .section__item {
-    background-color: var(--white-color);
+    /* background-color: var(--white-color); */
     padding: 10px 0;
 }
 

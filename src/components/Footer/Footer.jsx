@@ -2,8 +2,14 @@ import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 import { API_URL } from "actions/constants/constants";
+import Policies from "pages/Policies";
 
-export default function Footer() {
+export default function Footer({ fixed }) {
+  const footerStyle = {
+    // CSS cho footer
+    position: fixed ? "fixed" : "static",
+    bottom: 0,
+  };
   return (
     <>
       <footer className="footer">
@@ -23,7 +29,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li className="footer-item">
-                  <Link to="/" className="footer-link">
+                  <Link to="/policies" className="footer-link">
                     Chính sách vận chuyển
                   </Link>
                 </li>
@@ -94,7 +100,10 @@ export default function Footer() {
             </div>
             <div className="col l-2-4 m-8 c-12">
               <h3 className="footer__heading">Vào cửa hàng trên ứng dụng</h3>
-              <div className="footer__download">
+              <div
+                className="footer__download"
+                style={{ justifyContent: "space-between" }}
+              >
                 <Link to="/" className="footer__download-link">
                   <img
                     className="footer__download-img"
@@ -102,22 +111,13 @@ export default function Footer() {
                     alt=""
                   />
                 </Link>
-                <div className="footer__download-apps">
-                  <Link to="/" className="footer__download-apps-link">
-                    <img
-                      className="footer__download-apps-img"
-                      src={``}
-                      alt=""
-                    />
-                  </Link>
-                  <Link to="/" className="footer__download-apps-link">
-                    <img
-                      className="footer__download-apps-img"
-                      src={``}
-                      alt=""
-                    />
-                  </Link>
-                </div>
+                <Link to="/" className="footer__download-link">
+                  <img
+                    className="footer__download-img"
+                    src={`https://res.cloudinary.com/dk4pzxlqt/image/upload/v1689023580/logo/R_1_ythyhd.png`}
+                    alt=""
+                  />
+                </Link>
               </div>
             </div>
           </div>
@@ -127,8 +127,8 @@ export default function Footer() {
         <div className="grid wide">
           <div className="row">
             <div className="col l-12 m-12 c-12">
-              <p className="footer__copyright">
-                © 2023 - Bản quyền thuộc TuTu-Store
+              <p className="footer__copyright" style={{ color: "#FFFFFF" }}>
+                © TUTU STORE - 2023
               </p>
             </div>
           </div>

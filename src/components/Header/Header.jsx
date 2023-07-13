@@ -45,8 +45,8 @@ function Header(props) {
 
   return (
     <>
-      <header className="header">
-        <div className="grid wide">
+      <header className="header ">
+        <div className="grid wide ">
           <nav className="header__navbar hide-on-mobile-tablet">
             <ul className="header__navbar--list">
               <li className="header__navbar--item header__navbar--item-qr header__navbar-item--separate">

@@ -241,7 +241,7 @@ input[type="number"] {
   margin-right: 25px;
   padding-right: 20px;
   color: rgb(123, 122, 122);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 300;
   white-space: nowrap;
 }
@@ -288,7 +288,7 @@ input[type="number"] {
 }
 
 .bkMhdM .productsV2-heading {
-  background: #85D4BE;
+  background: #c3e5ae;
   padding: 9px 16px;
   border-radius: 4px;
   color: rgb(36, 36, 36);
@@ -302,7 +302,7 @@ input[type="number"] {
 
 .bkMhdM .productsV2-heading::before {
   content: "";
-  background: #85D4BE;
+  background: #c3e5ae;
   width: 100%;
   height: 20px;
   position: absolute;
@@ -313,7 +313,7 @@ input[type="number"] {
 
 .bkMhdM .productsV2-heading::after {
   content: "";
-  background: #85D4BE;
+  background: #c3e5ae;
   width: 100%;
   height: 10px;
   position: absolute;
@@ -449,8 +449,10 @@ input[type="number"] {
   background-color: rgb(11, 116, 229);
 }
 
-.intended__checkbox-label input[type="checkbox"]:checked + .checkbox-fake::before {
-    transform: scale(1) rotate(-45deg);
+.intended__checkbox-label
+  input[type="checkbox"]:checked
+  + .checkbox-fake::before {
+  transform: scale(1) rotate(-45deg);
 }
 
 .iMeYki .intended__img {
@@ -1006,7 +1008,7 @@ input[type="number"] {
 }
 
 .group .content {
-  width: 920px;
+  width: 100%;
   padding: 20px;
   display: inline-block;
   color: rgb(36, 36, 36);
@@ -1067,7 +1069,7 @@ input[type="number"] {
 }
 
 .info-cusomer-order-link {
-  color: #85D4BE;
+  color: #c3e5ae;
   font-size: 1.4rem;
   font-weight: 500;
 }
@@ -1826,7 +1828,7 @@ h4.heading {
 }
 .list__order-info thead {
   font-size: 1.5rem;
-  background-color: #85D4BE;
+  background-color: #c3e5ae;
   color: #fff;
 }
 .list__order-info thead tr th {
@@ -2520,13 +2522,13 @@ h4.heading {
 }
 
 .featured__body {
-  margin-top: 12px;
+  /* margin-top: 12px; */
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 1fr;
   gap: 12px 8px;
-  margin-left: 170px;
 
+  /* margin-left: 170px; */
 }
 
 .featured__body-item {
@@ -2535,19 +2537,18 @@ h4.heading {
   flex-direction: column;
   align-items: center;
   color: rgb(0, 0, 0);
-  background-color: white;
-    padding-top: 10px;
-    width: 140px;
-    border-radius: 20px;
-  
+  /* background-color: white; */
+  padding-top: 10px;
+  width: 100%;
+  border-radius: 20px;
 }
 .featured__body-item:hover {
-  background-color: #85D4BE;
+  background-color: #c3e5ae;
 }
 
 .featured__img {
-  width: 60px;
-  height: 60px;
+  width: 100x;
+  height: 100px;
   border-radius: 20px;
 }
 
@@ -2606,10 +2607,11 @@ h4.heading {
 }
 
 .navigation .nav {
-  width: 200%;
+  width: 100%;
   display: flex;
   line-height: 44px;
   transition: 0.5s;
+  justify-content: center;
 }
 
 .navigation .product {
@@ -2617,4 +2619,9 @@ h4.heading {
   color: black;
   margin: 0 13px;
   font-size: 14px;
+}
+.navigation.product .align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
