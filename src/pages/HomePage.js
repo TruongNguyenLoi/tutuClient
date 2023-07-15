@@ -78,7 +78,7 @@ function HomePage(props) {
     if (user) {
       getListRecommendForUser()
         .then((res) => {
-          setRecommendList(res);
+          setRecommendList(...recommendList, ...res.data.content);
         })
         .catch(() => setRecommendList([]));
     }
@@ -287,44 +287,39 @@ function HomePage(props) {
               </div>
             </div>
           </div>
+          <div
+            className="col l-12 m-12 c-12 "
+            style={{ backgroundColor: "#FFFFFF" }}
+          >
+            <br></br>
+            <br></br>
+            <h1 className="home-product-title" style={{ textAlign: "center" }}>
+              {" "}
+              SẢN PHẨM DÀNH CHO BẠN
+            </h1>
+            <br></br>
+          </div>
           {token ? (
-            <div>
-              <div
-                className="col l-12 m-12 c-12 "
-                style={{ backgroundColor: "#FFFFFF" }}
-              >
-                <br></br>
-                <br></br>
-                <h1
-                  className="home-product-title"
-                  style={{ textAlign: "center" }}
-                >
-                  {" "}
-                  SẢN PHẨM DÀNH CHO BẠN
-                </h1>
-                <br></br>
-              </div>
-              <div className="col l-12 m-12 c-12">
-                <div className="home-product">
-                  <div className="row sm-gutter section__item">
-                    {loading ? (
-                      <ProductItemSkeleton total={products.length} />
-                    ) : (
-                      <ProductItem products={recommendList} />
-                    )}
-                    <div className="col l-12 m-12 c-12">
-                      <div className="section-center">
-                        {page <= 3 ? (
-                          <button
-                            className="home-product-viewmore"
-                            onClick={() => handleChangePage(page)}
-                          >
-                            Xem thêm
-                          </button>
-                        ) : (
-                          ""
-                        )}
-                      </div>
+            <div className="col l-12 m-12 c-12">
+              <div className="home-product">
+                <div className="row sm-gutter section__item">
+                  {loading ? (
+                    <ProductItemSkeleton total={recommendList.length} />
+                  ) : (
+                    <ProductItem products={recommendList} />
+                  )}
+                  <div className="col l-12 m-12 c-12">
+                    <div className="section-center">
+                      {page <= 3 ? (
+                        <button
+                          className="home-product-viewmore"
+                          onClick={() => handleChangePage(page)}
+                        >
+                          Xem thêm
+                        </button>
+                      ) : (
+                        ""
+                      )}
                     </div>
                   </div>
                 </div>

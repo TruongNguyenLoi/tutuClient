@@ -30,6 +30,10 @@ import BrandProduct from "components/Brand/BrandProduct";
 import { toast } from "react-toastify";
 
 function DetailProduct(props) {
+  const [page, setPage] = useState(1);
+  const handleChangePage = (page) => {
+    setPage(page + 1);
+  };
   const dispatch = useDispatch();
   const history = useHistory();
   const { match } = props;
@@ -105,7 +109,7 @@ function DetailProduct(props) {
         .catch(() => setProductViewedd([]));
       getListRecommendForUser()
         .then((res) => {
-          setRecommendList(res);
+          setRecommendList(...recommendList, ...res.data.content);
         })
         .catch(() => setRecommendList([]));
       getProductLiked(id)
@@ -614,11 +618,25 @@ function DetailProduct(props) {
                         </h3>
                       </div>
                     </div>
-                    {loading ? (
+                    {token ? (
                       <ProductItemSkeleton total={recommendList.length} />
                     ) : (
                       <ProductItem products={recommendList} />
                     )}
+                    <div className="col l-12 m-12 c-12">
+                      <div className="section-center">
+                        {page <= 3 ? (
+                          <button
+                            className="home-product-viewmore"
+                            onClick={() => handleChangePage(page)}
+                          >
+                            Xem thêm
+                          </button>
+                        ) : (
+                          ""
+                        )}
+                      </div>
+                    </div>
                   </div>
                   <div className="row sm-gutter section__item">
                     <div className="col l-12 m-12 c-12">
@@ -633,6 +651,20 @@ function DetailProduct(props) {
                     ) : (
                       <ProductItem products={productViewed} />
                     )}
+                    <div className="col l-12 m-12 c-12">
+                      <div className="section-center">
+                        {page <= 3 ? (
+                          <button
+                            className="home-product-viewmore"
+                            onClick={() => handleChangePage(page)}
+                          >
+                            Xem thêm
+                          </button>
+                        ) : (
+                          ""
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
               ) : (
