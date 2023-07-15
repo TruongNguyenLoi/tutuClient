@@ -88,7 +88,10 @@ function HomePage(props) {
 
   return (
     <>
-      <div className="app__container"></div>
+      <div
+        className="app__container"
+        style={{ margin: "var(--header-height)", backgroundColor: "#FFFFFF" }}
+      ></div>
       <div className="grid wide">
         <div className="navigation">
           <div className="grid wide">
