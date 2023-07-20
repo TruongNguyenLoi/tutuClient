@@ -608,44 +608,73 @@ function DetailProduct(props) {
                   <ProductItem products={mostPopularProduct} />
                 )}
               </div>
+              <div
+                className="col l-12 m-12 c-12 "
+                style={{ backgroundColor: "#FFFFFF" }}
+              >
+                <br></br>
+                <br></br>
+                <h1
+                  className="home-product-title"
+                  style={{ textAlign: "center" }}
+                >
+                  {" "}
+                  SẢN PHẨM DÀNH CHO BẠN
+                </h1>
+                <br></br>
+              </div>
+              {/* const [recommendList, setRecommendList] = useState([]); */}
               {token ? (
-                <div>
-                  <div className="row sm-gutter section__item">
-                    <div className="col l-12 m-12 c-12">
-                      <div className="home-product-category-item">
-                        <h3 className="home-product-title">
-                          Sản phẩm dành cho bạn
-                        </h3>
-                      </div>
-                    </div>
-                    {loading ? (
-                      <ProductItemSkeleton total={recommendList.length} />
-                    ) : (
-                      <ProductItem products={recommendList} />
-                    )}
-                    <div className="col l-12 m-12 c-12">
-                      <div className="section-center">
-                        {page <= 3 ? (
-                          <button
-                            className="home-product-viewmore"
-                            onClick={() => handleChangePage(page)}
-                          >
-                            Xem thêm
-                          </button>
+                recommendList ? (
+                  <div className="col l-12 m-12 c-12">
+                    <div className="home-product">
+                      <div className="row sm-gutter section__item">
+                        {loading ? (
+                          <ProductItemSkeleton total={recommendList.length} />
                         ) : (
-                          ""
+                          <ProductItem products={recommendList} />
                         )}
+                        <div className="col l-12 m-12 c-12">
+                          <div className="section-center">
+                            {page <= 3 ? (
+                              <button
+                                className="home-product-viewmore"
+                                onClick={() => handleChangePage(page)}
+                              >
+                                Xem thêm
+                              </button>
+                            ) : (
+                              ""
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
+                ) : (
+                  <p>Chưa có sản phẩm </p>
+                )
+              ) : (
+                ""
+              )}
+              <div
+                className="col l-12 m-12 c-12 "
+                style={{ backgroundColor: "#FFFFFF" }}
+              >
+                <br></br>
+                <br></br>
+                <h1
+                  className="home-product-title"
+                  style={{ textAlign: "center" }}
+                >
+                  {" "}
+                  SẢN PHẨM ĐÃ XEM
+                </h1>
+                <br></br>
+              </div>
+              {token ? (
+                <div>
                   <div className="row sm-gutter section__item">
-                    <div className="col l-12 m-12 c-12">
-                      <div className="home-product-category-item">
-                        <h3 className="home-product-title">
-                          Sản phẩm bạn đã xem
-                        </h3>
-                      </div>
-                    </div>
                     {loading ? (
                       <ProductItemSkeleton total={productViewed.length} />
                     ) : (

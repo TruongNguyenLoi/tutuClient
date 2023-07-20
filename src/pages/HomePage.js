@@ -216,7 +216,6 @@ function HomePage(props) {
               </div>
             </div>
           </div>
-
           <div
             className="col l-12 m-12 c-12 "
             style={{ backgroundColor: "#FFFFFF" }}
@@ -229,7 +228,6 @@ function HomePage(props) {
             </h1>
             <br></br>
           </div>
-
           <div className="col l-12 m-12 c-12">
             <div className="home-product">
               <div
@@ -299,34 +297,39 @@ function HomePage(props) {
             </h1>
             <br></br>
           </div>
+          {/* const [recommendList, setRecommendList] = useState([]); */}
           {token ? (
-            <div className="col l-12 m-12 c-12">
-              <div className="home-product">
-                <div className="row sm-gutter section__item">
-                  {loading ? (
-                    <ProductItemSkeleton total={recommendList.length} />
-                  ) : (
-                    <ProductItem products={recommendList} />
-                  )}
-                  <div className="col l-12 m-12 c-12">
-                    <div className="section-center">
-                      {page <= 3 ? (
-                        <button
-                          className="home-product-viewmore"
-                          onClick={() => handleChangePage(page)}
-                        >
-                          Xem thêm
-                        </button>
-                      ) : (
-                        ""
-                      )}
+            recommendList ? (
+              <div className="col l-12 m-12 c-12">
+                <div className="home-product">
+                  <div className="row sm-gutter section__item">
+                    {loading ? (
+                      <ProductItemSkeleton total={recommendList.length} />
+                    ) : (
+                      <ProductItem products={recommendList} />
+                    )}
+                    <div className="col l-12 m-12 c-12">
+                      <div className="section-center">
+                        {page <= 3 ? (
+                          <button
+                            className="home-product-viewmore"
+                            onClick={() => handleChangePage(page)}
+                          >
+                            Xem thêm
+                          </button>
+                        ) : (
+                          ""
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              <p>Chưa có sản phẩm </p>
+            )
           ) : (
-            <p>"Chưa có sản phẩm" </p>
+            <p>"Vui lòng đăng nhập để xem thêm " </p>
           )}
         </div>
       </div>
