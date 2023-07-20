@@ -252,6 +252,7 @@ function CartPage(props) {
                                                 {currency(item.list_price)}
                                               </del>
                                             </div>
+                                            <div className="col-2"></div>
                                             <div className="col-3">
                                               <div className="intended-qty">
                                                 <div className="bcFTqg">

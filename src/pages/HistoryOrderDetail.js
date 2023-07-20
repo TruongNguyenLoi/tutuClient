@@ -280,7 +280,7 @@ function HistoryOrderDetail(props) {
                                           <p className="product-sku">
                                             SKU: {item?.product_id}
                                           </p>
-                                          {orderInfo?.status_order === 2 ? (
+                                          {orderInfo?.status_order === 3 ? (
                                             <div className="product-review">
                                               <span
                                                 onClick={() =>

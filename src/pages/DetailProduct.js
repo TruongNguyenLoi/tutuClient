@@ -109,7 +109,7 @@ function DetailProduct(props) {
         .catch(() => setProductViewedd([]));
       getListRecommendForUser()
         .then((res) => {
-          setRecommendList(...recommendList, ...res.data.content);
+          setRecommendList(res);
         })
         .catch(() => setRecommendList([]));
       getProductLiked(id)
@@ -362,12 +362,12 @@ function DetailProduct(props) {
                   <div className="product-detail">
                     <h4 className="product-name">{product.name}</h4>
                     <div className="product-detail-info">
-                      <p className="product-review">
+                      {/* <p className="product-review">
                         <span>{product?.review_count}</span> Đánh Giá
                       </p>
                       <p className="product-seller">
                         <span>{product?.seller_count}</span> Đã Bán{" "}
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                   <div className="product-detail-body">
@@ -618,7 +618,7 @@ function DetailProduct(props) {
                         </h3>
                       </div>
                     </div>
-                    {token ? (
+                    {loading ? (
                       <ProductItemSkeleton total={recommendList.length} />
                     ) : (
                       <ProductItem products={recommendList} />

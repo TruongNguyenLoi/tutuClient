@@ -78,7 +78,7 @@ function HomePage(props) {
     if (user) {
       getListRecommendForUser()
         .then((res) => {
-          setRecommendList(...recommendList, ...res.data.content);
+          setRecommendList(res);
         })
         .catch(() => setRecommendList([]));
     }
@@ -326,7 +326,7 @@ function HomePage(props) {
               </div>
             </div>
           ) : (
-            ""
+            <p>"Chưa có sản phẩm" </p>
           )}
         </div>
       </div>

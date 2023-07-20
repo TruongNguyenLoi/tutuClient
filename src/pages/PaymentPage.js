@@ -405,7 +405,7 @@ function PaymentPage(props) {
           method_code: "COD",
           datePayment: create_time,
           tradingCode: null,
-          status: 1,
+          status: 0,
         };
         const order = {
           username: user.username,
